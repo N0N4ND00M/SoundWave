@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>SoundWave Pro | Mood-Based Music Discovery</title>
+  <meta name="description" content="SoundWave Pro är en responsiv och interaktiv musikinspirationssida där användaren kan hitta låtar baserat på mood, energi och tid på dagen." />
+
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" />
+
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/sprite.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+
+  <script src="js/data.js" defer></script>
+  <script src="js/router.js" defer></script>
+  <script src="js/player.js" defer></script>
+  <script src="js/filter.js" defer></script>
+  <script src="js/favorites.js" defer></script>
+  <script src="js/theme.js" defer></script>
+  <script src="js/quiz.js" defer></script>
+  <script src="js/app.js" defer></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Hoppa till innehåll</a>
+
+  <header class="site-header" data-header>
+    <a class="logo" href="#home" aria-label="SoundWave Pro home">
+      <span class="logo-mark">SW</span>
+      <span class="logo-text">SoundWave<span>Pro</span></span>
+    </a>
+
+    <button class="menu-toggle" type="button" aria-label="Öppna meny" aria-expanded="false" data-menu-toggle>
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="main-nav" aria-label="Huvudnavigation" data-nav>
+      <a href="#home" data-route="home">Home</a>
+      <a href="#explore" data-route="explore">Explore</a>
+      <a href="#quiz" data-route="quiz">Mood Quiz</a>
+      <a href="#about" data-route="about">About</a>
+      <button class="theme-toggle" type="button" data-theme-toggle>
+        <span class="sprite sprite-sun" aria-hidden="true"></span>
+        <span data-theme-label>Light mode</span>
+      </button>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- HOME -->
+    <section class="page active-page" id="home" data-page="home">
+      <section class="hero">
+        <div class="hero-content">
+          <p class="eyebrow">Mood-based music discovery</p>
+          <h1>Find your sound. Match your mood.</h1>
+          <p class="hero-lead">
+            SoundWave Pro hjälper användaren att upptäcka musik utifrån känsla,
+            energi och tid på dagen. Sidan kombinerar responsiv layout, tydlig
+            interaktivitet och en modern musikplattformskänsla.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#explore" data-route="explore">
+              Start exploring
+            </a>
+            <a class="btn btn-secondary" href="#quiz" data-route="quiz">
+              Take mood quiz
+            </a>
+          </div>
+
+          <div class="hero-stats" aria-label="Projektfunktioner">
+            <article>
+              <strong>3+</strong>
+              <span>simulerade sidor</span>
+            </article>
+            <article>
+              <strong>6</strong>
+              <span>mood-filter</span>
+            </article>
+            <article>
+              <strong>100%</strong>
+              <span>responsive</span>
+            </article>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-label="SoundWave visual">
+          <div class="vinyl-card">
+            <div class="vinyl-disc" aria-hidden="true"></div>
+            <div class="wave-bars" aria-hidden="true">
+              <span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <h2>Live mood engine</h2>
+            <p>Night Drive • Focus • Chill</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <div class="section-heading">
+          <p class="eyebrow">Featured moods</p>
+          <h2>Choose the feeling first</h2>
+          <p>
+            I stället för att börja med genre låter SoundWave Pro användaren börja
+            med stämning. Det gör upplevelsen snabbare, tydligare och mer personlig.
+          </p>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card">
+            <span class="sprite sprite-moon" aria-hidden="true"></span>
+            <h3>Night Drive</h3>
+            <p>Mörk, atmosfärisk musik med neonkänsla.</p>
+          </article>
+
+          <article class="feature-card">
+            <span class="sprite sprite-bolt" aria-hidden="true"></span>
+            <h3>Hype</h3>
+            <p>Energi, tempo och låtar som känns starka.</p>
+          </article>
+
+          <article class="feature-card">
+            <span class="sprite sprite-headphones" aria-hidden="true"></span>
+            <h3>Focus</h3>
+            <p>Renare ljudbild för studier och koncentration.</p>
+          </article>
+        </div>
+      </section>
+    </section>
+
+    <!-- EXPLORE -->
+    <section class="page" id="explore" data-page="explore">
+      <section class="content-section explore-layout">
+        <aside class="explore-sidebar">
+          <p class="eyebrow">Explore</p>
+          <h1>Filter your sound</h1>
+          <p>
+            Använd filtren för att visa olika moods. Klicka på en låt för att
+            uppdatera spelaren längst ner.
+          </p>
+
+          <div class="filter-panel" aria-label="Mood filter">
+            <button class="filter-btn active-filter" type="button" data-filter="all">All</button>
+            <button class="filter-btn" type="button" data-filter="chill">Chill</button>
+            <button class="filter-btn" type="button" data-filter="hype">Hype</button>
+            <button class="filter-btn" type="button" data-filter="focus">Focus</button>
+            <button class="filter-btn" type="button" data-filter="sad">Sad</button>
+            <button class="filter-btn" type="button" data-filter="night">Night</button>
+          </div>
+
+          <div class="search-sort-panel">
+            <label>
+              Search song or artist
+              <input type="search" placeholder="Search..." data-search-input>
+            </label>
+          
+            <label>
+              Sort by
+              <select data-sort-select>
+                <option value="default">Default</option>
+                <option value="title">Title A-Z</option>
+                <option value="artist">Artist A-Z</option>
+                <option value="mood">Mood A-Z</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="mini-panel">
+            <h2>Current filter</h2>
+            <p data-current-filter>All songs</p>
+          </div>
+        </aside>
+
+        <section class="song-area">
+          <div class="section-heading compact">
+            <h2>Recommended tracks</h2>
+            <p>Cards skapas med JavaScript från en separat datafil.</p>
+          </div>
+
+          <div class="song-grid" data-song-grid></div>
+        </section>
+      </section>
+    </section>
+
+    <!-- QUIZ -->
+    <section class="page" id="quiz" data-page="quiz">
+      <section class="content-section quiz-section">
+        <div class="section-heading">
+          <p class="eyebrow">Mood quiz</p>
+          <h1>Let the page recommend a mood</h1>
+          <p>
+            Quizet använder JavaScript för att läsa användarens val och räkna fram
+            ett rekommenderat mood. Det gör sidan mer interaktiv än en vanlig infosida.
+          </p>
+        </div>
+
+        <form class="quiz-card" data-quiz-form>
+          <fieldset>
+            <legend>1. Hur känner du dig just nu?</legend>
+            <label><input type="radio" name="feeling" value="chill" required /> Calm</label>
+            <label><input type="radio" name="feeling" value="hype" /> Energetic</label>
+            <label><input type="radio" name="feeling" value="sad" /> Reflective</label>
+            <label><input type="radio" name="feeling" value="focus" /> Focused</label>
+          </fieldset>
+
+          <fieldset>
+            <legend>2. Vilken energi vill du ha?</legend>
+            <label><input type="radio" name="energy" value="focus" required /> Low and clean</label>
+            <label><input type="radio" name="energy" value="hype" /> High energy</label>
+            <label><input type="radio" name="energy" value="night" /> Dark and smooth</label>
+            <label><input type="radio" name="energy" value="chill" /> Soft and relaxed</label>
+          </fieldset>
+
+          <fieldset>
+            <legend>3. När lyssnar du?</legend>
+            <label><input type="radio" name="time" value="focus" required /> While studying</label>
+            <label><input type="radio" name="time" value="night" /> Late night</label>
+            <label><input type="radio" name="time" value="hype" /> Before going out</label>
+            <label><input type="radio" name="time" value="chill" /> At home</label>
+          </fieldset>
+
+          <button class="btn btn-primary" type="submit">Get recommendation</button>
+        </form>
+
+        <div class="quiz-result" data-quiz-result hidden>
+          <p class="eyebrow">Recommended mood</p>
+          <h2 data-result-title>Night Drive</h2>
+          <p data-result-description></p>
+          <a class="btn btn-secondary" href="#explore" data-route="explore" data-quiz-explore>
+            Show matching songs
+          </a>
+        </div>
+      </section>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="page" id="about" data-page="about">
+      <section class="content-section about-grid">
+        <div>
+          <p class="eyebrow">About the project</p>
+          <h1>Built for Webbutveckling 1</h1>
+          <p>
+            SoundWave Pro är skapad som ett slutprojekt för Webbutveckling 1.
+            Målet är att visa semantisk HTML, tydlig CSS-struktur, responsiv design
+            och JavaScript som faktiskt manipulerar sidans innehåll och utseende.
+          </p>
+          <p>
+            Projektet använder en enda HTML-fil men simulerar flera sidor genom att
+            visa och dölja sektioner med JavaScript. Det gör strukturen enkel men ändå
+            interaktiv.
+          </p>
+        </div>
+
+        <div class="tech-card">
+          <h2>Implemented features</h2>
+          <ul>
+            <li>Responsiv layout för mobil, surfplatta och desktop</li>
+            <li>Hash-baserad navigation mellan simulerade sidor</li>
+            <li>JavaScript-renderade låtkort från datafil</li>
+            <li>Mood-filter med dynamisk visning</li>
+            <li>Fake music player som uppdateras vid klick</li>
+            <li>Favoritmarkering med räknare</li>
+            <li>Dark/light mode med localStorage</li>
+            <li>CSS-sprite för små ikoner</li>
+          </ul>
+        </div>
+
+        <div class="device-card">
+          <h2>Device strategy</h2>
+          <div class="device-list">
+            <article>
+              <strong>Mobile</strong>
+              <span>375 × 667 px, en kolumn, hamburger-meny.</span>
+            </article>
+            <article>
+              <strong>Tablet</strong>
+              <span>1024 × 768 px, två kolumner och mer luftig layout.</span>
+            </article>
+            <article>
+              <strong>Desktop</strong>
+              <span>Över 1024 px, sidebar/grid och mer avancerad ytfördelning.</span>
+            </article>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="player" aria-label="Music player" data-player>
+    <div class="player-main">
+      <button class="player-button" type="button" aria-label="Play or pause" data-player-toggle>
+        <span data-player-icon>▶</span>
+      </button>
+  
+      <div>
+        <p class="small-label">Now playing</p>
+        <h2 data-player-title>Choose a song</h2>
+        <p data-player-artist>No artist selected</p>
+      </div>
+    </div>
+  
+    <div class="player-side">
+      <p data-favorite-count>Favorites: 0</p>
+      <p class="player-time" data-player-time>0:00 / 0:00</p>
+      <div class="progress" aria-label="Audio progress bar">
+        <div class="progress-fill" data-progress-fill></div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
