@@ -1,0 +1,36 @@
+/* =========================================================
+   SOUNDWAVE PRO - CSS SPRITES
+   All small interface icons are loaded from one sprite image.
+   ========================================================= */
+
+   .sprite {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    flex: 0 0 auto;
+    background-image: url("../assets/sprites/sprite.svg");
+    background-repeat: no-repeat;
+    background-size: 160px 32px;
+    vertical-align: middle;
+  }
+  
+  .sprite-play {
+    background-position: 0 0;
+  }
+  
+  .sprite-heart {
+    background-position: -32px 0;
+  }
+  
+  .sprite-headphones {
+    background-position: -64px 0;
+  }
+  
+  .sprite-moon {
+    background-position: -96px 0;
+  }
+  
+  .sprite-bolt,
+  .sprite-sun {
+    background-position: -128px 0;
+  }

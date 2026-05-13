@@ -1,0 +1,196 @@
+/* =========================================================
+   SOUNDWAVE PRO - RESPONSIVE
+   Different layouts for mobile, tablet and desktop.
+   ========================================================= */
+
+/* Tablet: two-column feel, less extreme hero. */
+@media (max-width: 1100px) {
+    .hero {
+      grid-template-columns: 1fr;
+      min-height: auto;
+      padding-top: 4rem;
+    }
+  
+    .hero-visual {
+      justify-content: flex-start;
+    }
+  
+    .vinyl-card {
+      min-height: 410px;
+    }
+  
+    .vinyl-disc {
+      width: 220px;
+      height: 220px;
+    }
+  
+    .explore-layout {
+      grid-template-columns: 1fr;
+    }
+  
+    .explore-sidebar {
+      position: static;
+    }
+  
+    .song-grid,
+    .feature-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  
+    .about-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .about-grid > div:first-child {
+      grid-row: auto;
+    }
+  }
+  
+  /* Mobile: hamburger, one column, bigger tap targets. */
+  @media (max-width: 760px) {
+    :root {
+      --header-height: 72px;
+    }
+  
+    body {
+      padding-bottom: 158px;
+    }
+  
+    .site-header {
+      padding-inline: 5vw;
+    }
+  
+    .logo-text {
+      display: none;
+    }
+  
+    .menu-toggle {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-content: center;
+      gap: 5px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--surface);
+      cursor: pointer;
+    }
+  
+    .menu-toggle span {
+      width: 22px;
+      height: 2px;
+      border-radius: 99px;
+      background: var(--text);
+    }
+  
+    .main-nav {
+      position: absolute;
+      top: calc(100% + 0.75rem);
+      left: 5vw;
+      right: 5vw;
+      display: none;
+      flex-direction: column;
+      align-items: stretch;
+      padding: 1rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: var(--bg-2);
+      box-shadow: var(--shadow);
+    }
+  
+    .main-nav.nav-open {
+      display: flex;
+    }
+  
+    .main-nav a,
+    .theme-toggle {
+      width: 100%;
+      justify-content: center;
+      padding: 0.8rem;
+    }
+  
+    .hero,
+    .content-section {
+      padding-inline: 5vw;
+    }
+  
+    .hero {
+      padding-top: 3rem;
+      gap: 2rem;
+    }
+  
+    h1 {
+      font-size: clamp(2.35rem, 17vw, 3.55rem);
+    }
+  
+    .hero-actions {
+      flex-direction: column;
+    }
+  
+    .hero-actions .btn {
+      width: 100%;
+    }
+  
+    .hero-stats {
+      grid-template-columns: 1fr;
+    }
+  
+    .vinyl-card {
+      min-height: 330px;
+      border-radius: 30px;
+    }
+  
+    .vinyl-disc {
+      width: 170px;
+      height: 170px;
+      margin-top: 1rem;
+    }
+  
+    .song-grid,
+    .feature-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .song-cover {
+      height: 155px;
+    }
+  
+    .filter-panel {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .filter-btn {
+      width: 100%;
+    }
+  
+    .quiz-card label {
+      display: flex;
+      margin-right: 0;
+    }
+  
+    .player {
+      min-height: 136px;
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    .player-side {
+      width: 100%;
+    }
+  
+    .player-side p {
+      text-align: left;
+    }
+  
+    .player-main h2 {
+      max-width: 72vw;
+    }
+  }
+  
+  /* Larger desktop: more spacious grid. */
+  @media (min-width: 1350px) {
+    .song-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
